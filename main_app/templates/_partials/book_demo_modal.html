@@ -1,0 +1,54 @@
+<div id="book-modal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" data-close>&times;</button>
+    <h2 class="modal-title">Book a free demo</h2>
+    <p class="muted">Share your details and we’ll contact you.</p>
+
+    <form id="book-form" method="post" novalidate>
+      {% csrf_token %}
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="id_username">Name</label>
+          <input id="id_username" name="username" required>
+          <div class="error" data-err="username"></div>
+        </div>
+
+        <div class="form-field">
+          <label for="id_email">Email</label>
+          <input id="id_email" type="email" name="email" required>
+          <div class="error" data-err="email"></div>
+        </div>
+
+        <div class="form-field">
+          <label for="id_phone">Phone</label>
+          <input id="id_phone" name="phone" required>
+          <div class="error" data-err="phone"></div>
+        </div>
+
+        <div class="form-field">
+          <label for="id_company">Company</label>
+          <input id="id_company" name="companyName" required>
+          <div class="error" data-err="companyName"></div>
+        </div>
+
+        <div class="form-field">
+          <label for="id_address">Address</label>
+          <input id="id_address" name="address" required>
+          <div class="error" data-err="address"></div>
+        </div>
+
+        <!-- لم نعد نطلب كلمات مرور من المستخدم -->
+        <input type="hidden" name="password1" value="">
+        <input type="hidden" name="password2" value="">
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Book demo</button>
+      </div>
+      <div class="error" data-err="form"></div>
+      <div id="book-success" class="success" style="display:none;">Thanks! We’ll reach out shortly…</div>
+    </form>
+  </div>
+</div>

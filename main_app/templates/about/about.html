@@ -1,0 +1,61 @@
+{% extends "_partials/base.html" %}
+{% load static %}
+{% block title %}About — AIgen{% endblock %}
+{% block page_css %}<link rel="stylesheet" href="{% static 'about.css' %}?v=2">{% endblock %}
+
+{% block content %}
+<section class="about-hero section">
+  <h1 class="about-title">About AIgen</h1>
+  <p class="about-sub">We transform businesses with secure, real-time AI for voice, chat, and workflows.</p>
+</section>
+
+<section class="section mission-vision">
+  <div class="mv-grid">
+    <div class="mv-text">
+      <h2 class="mv-heading">Our Mission</h2>
+      <p>
+        We revolutionize how organizations operate through practical AI. Our mission is to make
+        advanced automation accessible to teams of all sizes — unlocking efficiency, quality, and growth.
+      </p>
+      <p>
+        We blend domain understanding with global best practices to deliver solutions that truly matter.
+      </p>
+    </div>
+    <div class="mv-media">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop" alt="AI network">
+    </div>
+  </div>
+
+  <div class="vision-wrap">
+    <h3 class="section-super">Our Vision</h3>
+    <p class="section-sub">Human-level support, available instantly in multiple languages, with privacy and compliance at the core.</p>
+    <div class="vision-grid">
+      {% for v in vision_points %}
+      <article class="vision-card">
+        <div class="vicon">{{ v.icon }}</div>
+        <h4>{{ v.title }}</h4>
+        <p class="muted">{{ v.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section values">
+  <h2 class="values-title">Our Values</h2>
+  <p class="values-desc">Principles that guide every product and engagement we deliver.</p>
+  <div class="values-grid">
+    {% for v in values %}
+    <article class="val-card">
+      <div class="val-icon">{{ v.icon }}</div>
+      <h3 class="val-title">{{ v.title }}</h3>
+      <p class="val-text">{{ v.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section cta-final center">
+  <button class="btn cta-pill js-open-demo">Book Free Demo →</button>
+</section>
+{% endblock %}

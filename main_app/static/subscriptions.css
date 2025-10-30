@@ -1,0 +1,21 @@
+.plan-hero{
+  text-align:center; margin:20px auto 30px; max-width:860px;
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  border:1px solid var(--border); border-radius:22px; padding:28px; box-shadow:var(--shadow)
+}
+.plan-hero .price-current{font-size:1.8rem; font-weight:800}
+.plan-hero .price-original{display:none; color:var(--muted); text-decoration: line-through; font-size:1rem}
+.plan-hero .note{color:var(--muted); margin:6px 0 14px}
+
+.plan-details{
+  display:grid; gap:18px; grid-template-columns:repeat(3, minmax(0,1fr));
+  width:min(1100px, 100%); margin:0 auto;
+}
+.panel{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:20px}
+.panel h3{margin:0 0 10px}
+.panel ul{margin:0; padding-left:18px; color:var(--text); text-align:left}
+.panel li{margin:8px 0}
+
+@media (max-width: 960px){
+  .plan-details{grid-template-columns:1fr}
+}

@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}AIgen{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'main.css' %}?v=3">
+  {% block page_css %}{% endblock %}
+</head>
+<body>
+  <!-- Background -->
+  <video id="bg-video" autoplay loop muted playsinline>
+    <source src="{% static 'media/bg.mp4' %}" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
+  <div class="mouse-lights"></div>
+  <div class="floaty f1"></div>
+  <div class="floaty f2"></div>
+  <div class="floaty f3"></div>
+
+  <div id="scroll-progress"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/" aria-label="AIgen">
+        <!-- Logo -->
+         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#2ec6ff"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#g)" d="M12 2a10 10 0 1 0 10 10c0-2.2-1.5-3.9-3.6-4.6C16.6 6.6 14.6 6 12 6 8 6 5 8.2 5 11.2c0 2.2 1.7 3.8 3.9 3.8 2 0 3.6-1.3 3.6-3.1 0-1.4-1-2.3-2.4-2.3-.9 0-1.6.4-2 .9.2-1.8 2-3.2 4.3-3.2 3.2 0 5.6 2 5.6 4.9A8 8 0 1 1 12 2z"/>
+</svg>
+
+        <span class="logo-text">AIgen</span>
+      </a>
+      
+      <nav class="main-nav">
+        <a href="/#services">Services</a>
+        <a href="/#benefits">Benefits</a>
+        <a href="/about/">About</a>
+      </nav>
+
+      <button class="btn cta-pill js-open-demo">Get Started →</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  {% include "_partials/book_demo_modal.html" %}
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Contact</h4>
+          <p>
+            <a class="icon-link" href="mailto:fusiontechab@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#EA4335" d="M12 13.5 3.5 7.5v9A1.5 1.5 0 0 0 5 18h14a1.5 1.5 0 0 0 1.5-1.5v-9L12 13.5z"/><path fill="#EA4335" d="M19 6H5l7 5 7-5z"/></svg>
+              <span>fusiontechab@gmail.com</span>
+            </a>
+          </p>
+          <p>Phone: <a class="text-link" href="tel:+962795142177">+962 79 514 2177</a>||<a class="text-link" href="tel:+962789563020">+962 78 956 3020</a></p>
+          <p>Address: Amman, Jordan</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul class="footer-links">
+            <li><a class="text-link" href="/#services">Services</a></li>
+            <li><a class="text-link" href="/#benefits">Benefits</a></li>
+            <li><a class="text-link" href="/about/">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Social</h4>
+          <div class="social-row">
+            <a class="icon-link" href="https://www.instagram.com/fusiontechab/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#E1306C" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/><circle cx="12" cy="12" r="3.5" fill="#E1306C"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E1306C"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a class="icon-link" href="https://www.linkedin.com/in/fusion-tech-/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#0A66C2" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4zM8 8h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V23H8z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">© {{ now|date:"Y" }} AIgen</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'site.js' %}?v=3"></script>
+  <script src="{% static 'main_ui.js' %}"></script>
+  {% block page_js %}{% endblock %}
+</body>
+</html>

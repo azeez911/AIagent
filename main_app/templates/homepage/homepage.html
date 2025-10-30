@@ -1,0 +1,147 @@
+{% extends "_partials/base.html" %}
+{% load static %}
+{% block title %}AIgen{% endblock %}
+{% block page_css %}<link rel="stylesheet" href="{% static 'homepage.css' %}?v=4">{% endblock %}
+
+{% block content %}
+<section class="section hero center" aria-label="Hero">
+  <div class="hero-layers"><div class="layer l1"></div><div class="layer l2"></div><div class="layer l3"></div></div>
+  <div class="hero-content">
+    <h1 class="shine parallax">Transform with <span>Intelligent AI</span></h1>
+    <p class="parallax">Elevate your business with AI solutions that adapt, learn, and scale with your needs.</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="kpi-value">40+</div><div class="kpi-label">Hours Saved Weekly</div><small>Per client on average</small></div>
+      <div class="kpi"><div class="kpi-value"><span class="num" data-target="{{ counters.conversion_boost }}" data-suffix="%">0%</span></div><div class="kpi-label">Conversion Boost</div><small>Lead to customer rate</small></div>
+      <div class="kpi"><div class="kpi-value"><span class="num" data-target="{{ counters.cost_reduction }}" data-suffix="%">0%</span></div><div class="kpi-label">Cost Reduction</div><small>Operational expenses</small></div>
+    </div>
+
+    <div class="cta-row"><button class="btn cta-pill js-open-demo">Book Free Demo ✨</button></div>
+
+    <a href="#services" class="explore-link">Explore Our Services <span class="chev">⌄</span></a>
+
+    <div class="marquee">
+      <div class="track">
+        <span>Multi-channel</span><span>Arabic + English</span><span>Low-latency</span><span>Secure deployment</span><span>Smart handoff</span><span>Analytics</span>
+        <span>Multi-channel</span><span>Arabic + English</span><span>Low-latency</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section packages center" aria-label="AI Automation Packages">
+  <elevenlabs-convai agent-id="agent_6701k65xnbj9fczv5zb5m43fxy16"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <h2>AI Automation Packages</h2>
+  <p class="lead">Custom-built voice, chat, and workflow systems to handle support, sales, and bookings — so your team can focus on what matters most.</p>
+
+  <div class="pkg-grid">
+    <article class="pkg-card reveal">
+      <div class="pkg-icon">💬</div>
+      <h3>Customer Support Automation</h3>
+      <p class="muted">Resolve inquiries 24/7 without hiring extra staff.</p>
+      <div class="pkg-columns">
+        <div>
+          <h4>Includes:</h4>
+          <ul>
+            <li>AI ChatBot (Website + WhatsApp)</li>
+            <li>Response Automation</li>
+            <li>Multilingual FAQs + Live Handoff</li>
+            <li>Custom NLP Training</li>
+            <li>Voice Agent with IVR & Smart Routing</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Perfect for:</h4>
+          <p>Services, e-commerce, healthcare, education.</p>
+        </div>
+      </div>
+      <button class="btn btn-ghost explore js-open-demo">Explore Further →</button>
+    </article>
+
+    <article class="pkg-card reveal">
+      <div class="pkg-icon">📞</div>
+      <h3>AI Sales Assistant</h3>
+      <p class="muted">Engage, qualify, and follow up with leads — automatically.</p>
+      <div class="pkg-columns">
+        <div>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Outbound/Inbound Voice</li>
+            <li>WhatsApp Follow-Ups</li>
+            <li>Lead Qualification Scripts</li>
+            <li>Calendar Integration</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Perfect for:</h4>
+          <p>Real estate, finance, recruitment, agencies.</p>
+        </div>
+      </div>
+      <button class="btn btn-ghost explore js-open-demo">Explore Further →</button>
+    </article>
+
+    <article class="pkg-card reveal">
+      <div class="pkg-icon">📅</div>
+      <h3>Appointment & Booking Automation</h3>
+      <p class="muted">Let clients book without back-and-forth.</p>
+      <div class="pkg-columns">
+        <div>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Booking Bot (Web/WhatsApp)</li>
+            <li>Google Calendar / CRM Sync</li>
+            <li>Reminders & Confirmations</li>
+            <li>Voice + Chat Integration</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Perfect for:</h4>
+          <p>Clinics, salons, consultants, trainers.</p>
+        </div>
+      </div>
+      <button class="btn btn-ghost explore js-open-demo">Explore Further →</button>
+    </article>
+
+    <article class="pkg-card reveal">
+      <div class="pkg-icon">⚙️</div>
+      <h3>Custom AI Workflows</h3>
+      <p class="muted">Need something specific? We’ll tailor a system for you.</p>
+      <div class="pkg-columns">
+        <div>
+          <h4>Includes:</h4>
+          <ul>
+            <li>Bespoke Integrations (CRM, ERP, etc.)</li>
+            <li>Hybrid Voice + Chat Flows</li>
+            <li>Advanced Logic & Routing</li>
+            <li>Human-in-the-Loop Escalations</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Perfect for:</h4>
+          <p>Enterprises, fast-scaling startups, niche use cases.</p>
+        </div>
+      </div>
+      <button class="btn btn-ghost explore js-open-demo">Explore Further →</button>
+    </article>
+  </div>
+</section>
+
+<section id="benefits" class="section benefits center" aria-label="Benefits">
+  <h2 class="reveal">Smarter Business. Seamless Automation.</h2>
+  <p class="benefit-lead reveal">
+    Build once, then scale everywhere. AIgen connects voice, chat, and workflow automation into a single,
+    reliable system that answers instantly, captures high-intent leads, and removes manual busywork.
+    From customer support to sales follow-ups and bookings, your team gets consistent quality 24/7 with
+    analytics, handoff controls, and multilingual experiences.
+  </p>
+  <div class="benefit-grid">
+    {% for b in benefits %}
+    <article class="benefit-card reveal">
+      <div class="bicon">{{ b.icon }}</div>
+      <div><h3>{{ b.title }}</h3><p class="muted">{{ b.text }}</p></div>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="center"><button class="btn cta-pill js-open-demo">Get Started →</button></div>
+</section>
+{% endblock %}

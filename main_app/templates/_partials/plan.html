@@ -1,0 +1,37 @@
+{% extends "_partials/base.html" %}
+{% load static %}
+{% block title %}{{ plan.name }} — Pricing{% endblock %}
+{% block page_css %}<link rel="stylesheet" href="{% static 'subscriptions.css' %}">{% endblock %}
+
+{% block content %}
+<section class="plan-hero center">
+  <h1>{{ plan.name }}</h1>
+  <div class="price-wrap">
+    <div class="price-current">{{ plan.price }}</div>
+    <div class="price-original">{% if plan.discount_active %}{{ plan.original }}{% endif %}</div>
+  </div>
+  <div class="note">{{ plan.note }}</div>
+  <button class="btn btn-primary plan-choose" data-plan="{{ plan.slug }}" data-plan-name="{{ plan.name }}" data-plan-note="{{ plan.note }}">Continue</button>
+</section>
+
+<section class="plan-details center">
+  <div class="panel">
+    <h3>What’s included</h3>
+    <ul>
+      {% for b in plan.bullets %}<li>{{ b }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="panel">
+    <h3>Add-ons (optional)</h3>
+    <ul>
+      {% for a in addons %}<li>{{ a }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="panel">
+    <h3>POC Terms</h3>
+    <ul>
+      {% for t in terms %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
